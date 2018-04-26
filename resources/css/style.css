@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+:root {
+    font-size: 20px;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', 'Sans-serif';
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    width: 70px;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    transition: all .4s;
+    z-index: 999;
+}
+
+.sidebar:hover {
+    width: 190px;
+    box-shadow: 3px 0 22px #000;
+}
+
+.one,
+.two,
+.three{
+    color: #fff;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 10%;
+}
+
+.logo span {
+    font-size: 4rem;
+}
+
+.accordion,
+.navbar,
+.modal {
+    font-size: 3rem;
+    margin: 15% 0;
+    cursor: pointer;
+    overflow: hidden;
+    margin-right:20px;
+}
+
+.accordion span:last-child,
+.navbar span:last-child,
+.modal span:last-child{
+	font-size: 1.8rem;
+}
+
+.accordion:after,
+.navbar:after,
+.modal:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #fff;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: bottom right;
+    transform-origin: bottom right;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+}
+
+.accordion:hover:after,
+.navbar:hover:after,
+.modal:hover:after {
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+
+}
+
+
+
+
+.container{
+	
+	height:100vh;
+	margin-left:70px;
+	background: #d9dede;
+}
+
+.title {
+	transform: skewY(-6deg);
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1.95;
+    height: 10vh;
+    display: inline-block;
+    margin: 10vh 0 0 5vw;
+}
+
+.title  span {
+	padding: 1.3rem 2rem;
+    background-image: linear-gradient(to right bottom, #007BFF, #555);
+}
