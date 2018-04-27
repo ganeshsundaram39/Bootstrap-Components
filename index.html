@@ -13,15 +13,50 @@
     <div class="sidebar">
         <ul class="list">
             <li class="logo"><span>B</span></li>
-            <li class="accordion"><span class="one">1.</span><span>Accordion</span></li>
-            <li class="navbar"><span class="two">2.</span><span>Navbar</span></li>
-            <li class="modal"><span class="three">3.</span><span>Modal</span></li>
+            <li class="accordion" data-type="accord"><span class="one">1.</span><span>Accordion</span></li>
+            <li class="navbar" data-type="nav"><span class="two">2.</span><span>Navbar</span></li>
+            <li class="modal" data-type="mod"><span class="three">3.</span><span>Modal</span></li>
         </ul>
     </div>
-    <div class="container">
-    	
-    	<div class="title"><span>Accordion</span></div>
-    	
+    <div class="multiscroll-nav">
+        <ul>
+            <li data-type="accord"></li>
+            <li data-type="nav"></li>
+            <li data-type="mod"></li>
+        </ul>
+    </div>
+    <div class="accordion-container">
+        <div class="flex-container">
+            <div class="title"><span>Accordion</span></div>
+            <div id="accordion">
+                <div class="section">
+               <div class="card-header">Collapsible Group Item #1</div>
+               <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</div>
+               </div>
+               <div class="section">
+               <div class="card-header">Collapsible Group Item #2</div>
+               <div class="card-body">
+                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+               </div>
+               </div>
+               <div class="section">
+               <div class="card-header">Collapsible Group Item #3</div>
+               <div class="card-body">
+                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+               </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar-container">
+        <div class="flex-container">
+            <div class="title"><span>Navbar</span></div>
+        </div>
+    </div>
+    <div class="modal-container">
+        <div class="flex-container">
+            <div class="title"><span>Modal</span></div>
+        </div>
     </div>
     <script src="vendors/js/jquery-3.3.1.slim.min.js"></script>
     <script src="resources/js/index.js"></script>
