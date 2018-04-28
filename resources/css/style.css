@@ -16,7 +16,7 @@ body {
     font-family: 'Lato', 'Arial', 'Sans-serif';
     font-weight: 300;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .sidebar {
@@ -46,14 +46,15 @@ body {
     padding: 10%;
 }
 
-.logo span {
-    font-size: 4rem;
+.sidebar .logo span {
+    font-size: 3.9rem;
 }
+
 
 .logo::after {
 	content: "";
     position: absolute;
-    width: 50%;
+    width: 60%;
     height: 4px;
     background-color: #007BFF;
 }
@@ -168,7 +169,6 @@ body {
     line-height: 1.95;
     height: 10vh;
     display: inline-block;
-    margin: 0 0 0 5vw;
 }
 
 .title span {
@@ -179,7 +179,14 @@ body {
     background-image: linear-gradient(to right bottom, #007BFF, #555);
 }
 
+.accordion-container .title,
+.modal-container .title {
+	 margin: 0 0 0 5vw;
+}
 
+.navbar-container .title {
+	display: none;
+}
 
 
 
@@ -192,23 +199,58 @@ body {
 
 .card-header{
 	height: 10vh;
-	padding:0 2%;
+	padding:3%;
 	background: #fff;
     border-radius: 3px;
     color: #000;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
     border-bottom: 1px solid #d0d0d0;
 }
 
 .card-body{
-	height: 30vh;
 	display: none;
 	font-size: 0.9rem;
 	line-height: 1.3;
 	background: #fff;
     border-top: 1px solid #d0d0d0;
     border-bottom: 1px solid #d0d0d0;
-    padding: 1% 2%;
+    padding: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+#navbar {
+	display: flex;
+    justify-content: space-between;
+    height: 70px;
+    padding: 1% 4%;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #d0cdcd;
+}
+
+#navbar ul {
+	list-style: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+}
+
+#navbar li {
+	cursor: pointer;
+}
+
+#navbar .logo {
+	font-size: 2rem;
+	cursor: pointer;
 }

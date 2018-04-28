@@ -1,29 +1,28 @@
-
 const refreshComponent = () => {
-	$('.accordion-container').hide();
-    $('.navbar-container').hide();
-    $('.modal-container').hide();
+    $('.accordion-container, .navbar-container, .modal-container')
+        .hide();
 
-    $('.multiscroll-nav li').css("color","#555");
+    $('.multiscroll-nav li')
+        .css("color", "#555");
 };
 
 const componentNavigate = e => {
 
-    const componentType = e.target.closest('li').dataset.type;
+    if (e.target.closest('li')) {
+        const componentType = e.target.closest('li').dataset.type;
+        const componentId = e.target.closest('li').dataset.id;
 
-    if (componentType) {
-        
-        refreshComponent();
 
-        if (componentType === "accord") {
-            $('.accordion-container').show(200);
-            $('.multiscroll-nav li').eq(0).css("color","#007BFF");
-        } else if (componentType === "nav") {
-            $('.navbar-container').show(200);
-            $('.multiscroll-nav li').eq(1).css("color","#007BFF");
-        } else if (componentType === "mod") {
-            $('.modal-container').show(200);
-            $('.multiscroll-nav li').eq(2).css("color","#007BFF");
+        if (componentType) {
+
+            refreshComponent();
+
+            $(`.${componentType}-container`)
+                .show(200);
+
+            $('.multiscroll-nav li')
+                .eq(componentId)
+                .css("color", "#007BFF");
         }
     }
 };
@@ -31,20 +30,62 @@ const componentNavigate = e => {
 $('.sidebar .list').on('click', componentNavigate);
 $('.multiscroll-nav ul').on('click', componentNavigate);
 
-const refreshAccordion = () => {
 
+
+
+
+
+
+const arrowAnimate = function(current) {
+    if (current.find('i').hasClass('ion-chevron-down')) {
+        current.find('i').replaceWith('<i class="ion-chevron-up"></i>');
+    } else {
+        current.find('i').replaceWith('<i class="ion-chevron-down"></i>');
+    }
 };
 
-const accordionAnimate = e => {
-	refreshAccordion();
+const accordionAnimate = function(e) {
+
+    if (e.target.closest('.card-header')) {
+
+        const headerId = e.target.closest('.card-header').dataset.id;
+
+        if (headerId) {
+
+            arrowAnimate($(this));
+
+            $('.card-body')
+                .not(`.card-body[data-id="${headerId}"]`)
+                .slideUp(200);
+
+            $('.card-header')
+                .not(`.card-header[data-id="${headerId}"]`)
+                .each(function(header) {
+
+                    $(this).find('i')
+                        .replaceWith('<i class="ion-chevron-down"></i>');
+                });
+
+            $(this).parent().children('.card-body')
+                .slideToggle(200);
+        }
+    }
 };
 
-$('.card-header').on('click',accordionAnimate);
+$('.card-header').on('click', accordionAnimate);
+
+
+
+
+
+
 
 $(document).ready(() => {
 
     $('.navbar-container').hide();
     $('.modal-container').hide();
-    $('.card-body').eq(0).show(500);
+    $('.card-body').eq(0).slideDown(200);
+    arrowAnimate($('.card-header').eq(0));
+
 
 });
