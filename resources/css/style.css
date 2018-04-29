@@ -14,7 +14,7 @@ body {
     background-color: #fff;
     color: #555;
     font-family: 'Lato', 'Arial', 'Sans-serif';
-    font-weight: 300;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
     overflow: hidden;
 }
@@ -67,14 +67,6 @@ body {
     cursor: pointer;
     overflow: hidden;
     margin-right:20px;
-}
-
-.logo span,
-.accordion,
-.navbar,
-.modal
-{
-	font-weight: 400;
 }
 
 .accordion span:last-child,
@@ -138,6 +130,7 @@ body {
 	-o-transition: all 1s;
 	transition: all 1s;
 }
+
 .multiscroll-nav li:first-child {
 	color:#007BFF;
 }
@@ -184,8 +177,10 @@ body {
 	 margin: 0 0 0 5vw;
 }
 
-.navbar-container .title {
-	display: none;
+
+.navbar-container .title,
+.modal-container .button{
+	margin: 0 0 30vh 10vw;
 }
 
 
@@ -202,7 +197,7 @@ body {
 	padding:3%;
 	background: #fff;
     border-radius: 3px;
-    color: #000;
+    color: #212529;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -213,7 +208,7 @@ body {
 .card-body{
 	display: none;
 	font-size: 0.9rem;
-	line-height: 1.3;
+	line-height: 135%;
 	background: #fff;
     border-top: 1px solid #d0d0d0;
     border-bottom: 1px solid #d0d0d0;
@@ -254,3 +249,81 @@ body {
 	font-size: 2rem;
 	cursor: pointer;
 }
+
+
+
+.button a:link,
+.button a:visited{
+	border: 2px solid #007bff;
+    padding: 1% 2%;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: all .2s ease-in;
+}
+
+.button a:hover,
+.button a:active {
+	color:#fff;
+	background:#007bff;
+	box-shadow: -2px 7px 14px 1px #736c6c;
+}
+
+
+
+
+#modal {
+	position: fixed;
+	z-index: 199;
+	width:100vw;
+	height:100vh;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+}
+
+.modal-content{
+	background-color: #f4f4f4;
+	display: none;
+	margin-top:5%;
+	max-width:600px;
+	height:60%;
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+	color: #212529;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    padding: 1% 3%;
+	height: 10vh;
+	border-bottom: 1px solid #ccc;
+}
+
+.modal-header div:first-child{
+	font-weight: 700;
+}
+
+.modal-content .closeBtn{
+	color:#555;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all .2s;
+}
+
+.modal-content .closeBtn:hover{
+	color:#212529;
+}
+
+.modal-body{
+	padding:2% 3%;
+}
+
+.modal-body p {
+	font-size: 0.9rem;
+	line-height: 135%;
+}
+
+

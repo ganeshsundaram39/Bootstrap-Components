@@ -1,6 +1,6 @@
 const refreshComponent = () => {
     $('.accordion-container, .navbar-container, .modal-container')
-        .hide();
+        .slideUp(300);
 
     $('.multiscroll-nav li')
         .css("color", "#555");
@@ -12,13 +12,12 @@ const componentNavigate = e => {
         const componentType = e.target.closest('li').dataset.type;
         const componentId = e.target.closest('li').dataset.id;
 
-
         if (componentType) {
 
             refreshComponent();
 
             $(`.${componentType}-container`)
-                .show(200);
+                .slideDown(300);
 
             $('.multiscroll-nav li')
                 .eq(componentId)
@@ -52,6 +51,9 @@ const accordionAnimate = function(e) {
 
         if (headerId) {
 
+            $(this).parent().children('.card-body')
+                .slideToggle(200);
+
             arrowAnimate($(this));
 
             $('.card-body')
@@ -65,9 +67,6 @@ const accordionAnimate = function(e) {
                     $(this).find('i')
                         .replaceWith('<i class="ion-chevron-down"></i>');
                 });
-
-            $(this).parent().children('.card-body')
-                .slideToggle(200);
         }
     }
 };
@@ -75,6 +74,27 @@ const accordionAnimate = function(e) {
 $('.card-header').on('click', accordionAnimate);
 
 
+
+
+const modalToggle = e => {
+	$('#modal').fadeToggle(1000);
+	$('.modal-content').slideToggle(300);
+};
+
+
+const modalOutsideClick = e =>{
+
+	if(e.target==$('#modal')[0])
+	{	
+		modalToggle();
+	}
+};
+
+$('.modal-container .button ').on('click',modalToggle);
+
+$(window).on('click',modalOutsideClick);
+
+$('.modal-content .closeBtn').on('click',modalToggle);
 
 
 
@@ -86,6 +106,5 @@ $(document).ready(() => {
     $('.modal-container').hide();
     $('.card-body').eq(0).slideDown(200);
     arrowAnimate($('.card-header').eq(0));
-
-
+ 	$('#modal').hide();
 });
