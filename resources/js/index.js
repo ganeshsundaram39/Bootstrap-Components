@@ -3,7 +3,10 @@ const refreshComponent = () => {
         .slideUp(300);
 
     $('.multiscroll-nav li')
-        .css("color", "#555");
+        .css({
+            "color": "#555",
+            "transform":"scale(1)"
+        });
 };
 
 const componentNavigate = e => {
@@ -21,7 +24,9 @@ const componentNavigate = e => {
 
             $('.multiscroll-nav li')
                 .eq(componentId)
-                .css("color", "#007BFF");
+                .css({"color": "#007BFF",
+                    "transform":"scale(1.2)"
+                });
         }
     }
 };
@@ -76,25 +81,33 @@ $('.card-header').on('click', accordionAnimate);
 
 
 
+const navbarToggle = e => {
+    $('#navbar ul').slideToggle();
+}
+
+$('.burger').on('click',navbarToggle);
+
+
+
 const modalToggle = e => {
-	$('#modal').fadeToggle(1000);
-	$('.modal-content').slideToggle(300);
+    $('#modal').fadeToggle(1000);
+    $('.modal-content').slideToggle(300);
 };
 
+const modalOutsideClick = e => {
 
-const modalOutsideClick = e =>{
-
-	if(e.target==$('#modal')[0])
-	{	
-		modalToggle();
-	}
+    if (e.target == $('#modal')[0]) {
+        modalToggle();
+    }
 };
 
-$('.modal-container .button ').on('click',modalToggle);
+$('.modal-container .button ').on('click', modalToggle);
 
-$(window).on('click',modalOutsideClick);
+$(window).on('click', modalOutsideClick);
 
-$('.modal-content .closeBtn').on('click',modalToggle);
+$('.modal-content .closeBtn').on('click', modalToggle);
+
+
 
 
 
@@ -106,5 +119,5 @@ $(document).ready(() => {
     $('.modal-container').hide();
     $('.card-body').eq(0).slideDown(200);
     arrowAnimate($('.card-header').eq(0));
- 	$('#modal').hide();
+    $('#modal').hide();
 });
