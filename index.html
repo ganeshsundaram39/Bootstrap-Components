@@ -3,23 +3,32 @@
 
 <head>
     <meta charset="utf-8">
+    <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <!-- ionicons  -->
     <link rel="stylesheet" type="text/css" href="./vendors/fonts/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css">   
+    <!-- custom style || Check style.css and queries.css for unminified version-->
+    <link rel="stylesheet" type="text/css" href="./resources/css/index.css">
+    <!-- tab icons -->
     <link rel="icon" href="./resources/img/bootstrap-icon.png">
+    <!-- title -->
     <title>Bootstrap Components</title>
 </head>
 
 <body>
+    <!-- sidebar left side -->
     <div class="sidebar">
         <ul class="list">
+            <!-- logo -->
             <li class="logo"><span>Bc</span></li>
+            <!-- clickable links -->
             <li class="accordion" data-type="accordion" data-id=0><span class="one">1.</span><span>Accordion</span></li>
             <li class="navbar" data-type="navbar" data-id=1><span class="two">2.</span><span>Navbar</span></li>
             <li class="modal" data-type="modal" data-id=2><span class="three">3.</span><span>Modal</span></li>
         </ul>
     </div>
+    <!-- sidebar left side ends -->
+    <!-- sidebar right side -->
     <div class="multiscroll-nav">
         <ul>
             <li data-type="accordion" data-id=0></li>
@@ -27,25 +36,30 @@
             <li data-type="modal" data-id=2></li>
         </ul>
     </div>
+    <!-- accordion container -->
     <div class="accordion-container">
+        <!-- flexbox for positioning -->
         <div class="flex-container">
+            <!-- title -->
             <div class="title"><span>Accordion</span></div>
+            <!-- accordion -->
             <div id="accordion">
                 <div class="section">
                     <div class="card-header" data-id="first">
                         <div>What is HTML?</div>
-                        <div><i class="ion-chevron-down"></i></div>
+                        <div><i class="ion-chevron-up"></i></div>
                     </div>
                     <div class="card-body" data-id="first">HTML is the standard markup language for creating Web pages.
                         <br>HTML stands for Hyper Text Markup Language.
                         <br>HTML describes the structure of Web pages using markup.
                         <br>HTML elements are the building blocks of HTML pages.
-                        <br>HTML elements are represented by tags.</div>
+                        <br>HTML elements are represented by tags.
+                    </div>
                 </div>
                 <div class="section">
                     <div class="card-header" data-id="second">
                         <div>What is CSS?</div>
-                        <div><i class="ion-chevron-down"></i></div>
+                        <div><i class="ion-chevron-up"></i></div>
                     </div>
                     <div class="card-body" data-id="second">
                         CSS stands for Cascading Style Sheets.
@@ -58,7 +72,7 @@
                 <div class="section">
                     <div class="card-header" data-id="third">
                         <div>What is JavaScript?</div>
-                        <div><i class="ion-chevron-down"></i></div>
+                        <div><i class="ion-chevron-up"></i></div>
                     </div>
                     <div class="card-body" data-id="third">
                         JavaScript is the programming language of HTML and the Web.
@@ -67,8 +81,12 @@
                     </div>
                 </div>
             </div>
+            <!-- accordion ends -->
         </div>
+        <!-- flex-container ends -->
     </div>
+    <!-- accordion-container ends -->
+    <!-- navbar-container -->
     <div class="navbar-container">
         <div class="flex-container">
             <div id="navbar">
@@ -79,21 +97,31 @@
                     <li>Pricing</li>
                     <li>About</li>
                 </ul>
+                <!-- navbar button -->
                 <div class="burger"><i class="ion-navicon"></i></div>
             </div>
+            <!-- title -->
             <div class="title"><span>Navbar</span></div>
         </div>
     </div>
+    <!-- navbar-container ends -->
+    <!-- modal-container -->
     <div class="modal-container">
         <div class="flex-container">
+            <!-- title -->
             <div class="title"><span>Modal</span></div>
+            <!-- button to show modal -->
             <div class="button"><a href="#">Click Me!</a></div>
+            <!-- modal area -->
             <div id="modal">
+                <!-- modal -->
                 <div class="modal-content">
+                    <!-- header -->
                     <div class="modal-header">
                         <div>Webpack</div>
                         <div class="closeBtn"><i class="ion-close"></i></div>
                     </div>
+                    <!-- body -->
                     <div class="modal-body">
                         <p>At its core, webpack is a static module bundler for modern JavaScript applications.
                             <br>
@@ -103,7 +131,12 @@
             </div>
         </div>
     </div>
-    <script src="vendors/js/jquery-3.3.1.slim.min.js"></script>
+    <!-- modal-container ends -->
+
+    <!-- jquery -->
+    <script src="vendors/js/jquery-3.3.1.min.js"></script>
+
+    <!-- custom script || check script.js for unminified version-->
     <script src="resources/js/index.js"></script>
 </body>
 

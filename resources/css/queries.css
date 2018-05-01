@@ -1,83 +1,132 @@
+/*media queries for navbar */
+
+@media (max-width: 767px) {
+
+    #navbar ul {
+        display: none;
+        width: 100%;
+        height: 0px;
+        position: fixed;
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+        z-index: 100;
+        transition: all .2s;
+    }
+
+    #navbar li {
+        padding: 2%;
+        background: #fff;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #navbar ul {
+        display: flex !important;
+        width: 40%;
+        justify-content: space-around;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /*Extra small devices (portrait phones, less than 576px)*/
 
 @media (max-width: 575.98px) {
-    :root {
+
+    /*base font*/
+     :root {
         font-size: 16px !important;
     }
 
+    /*navbar */
+    #navbar li {
+        padding: 7%;
+    }
 
+    /*modal button */
     .button a:link,
     .button a:visited {
         padding: 4% 6%;
     }
 
+    /*padding for modal*/
     .modal-header,
-    .modal-body{
-    	padding:2% 5%;
+    .modal-body {
+        padding: 2% 5%;
     }
 }
+
+
+
 
 /*Small devices (landscape phones, 576px and up)*/
 
 @media (max-width: 767.98px) {
-    :root {
+
+    /*base font*/
+     :root {
         font-size: 18px;
     }
 
+    /*hide sidebar*/
     .sidebar {
         display: none;
     }
 
+    /*full width for component containers*/
     .accordion-container,
     .navbar-container,
     .modal-container {
         margin-left: 0;
     }
 
+    /*margin for title of components*/
     .accordion-container .title,
     .modal-container .title {
         margin: 5vh 0 0 5vw;
     }
 
-    #accordion {
-        width: 70vw;
-    }
 
+    /*width for accordion and modal*/
+    #accordion,
     .modal-content {
         width: 70vw;
     }
 
+    /*navbar button*/
     .burger {
         display: block;
     }
 
+    /*navbar logo overline*/
     .logo::after {
-    	width: 50%;
-	}
+        width: 50%;
+    }
 
-	.multiscroll-nav li {
-    	font-size: 2.4rem;
-	}
+    /*right navbar size*/
+    .multiscroll-nav li {
+        font-size: 2.4rem;
+    }
 }
+
+
+
 
 /*Medium devices (tablets, 768px and up)*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	#navbar ul {
-		width:50%;
-	}
+
+    /*navbar width*/
+    #navbar ul {
+        width: 50%;
+    }
 }
-
-
-
-
-/*Large devices (desktops, 992px and up)*/
-
-@media (min-width: 992px) and (max-width: 1199.98px) {}
-
-
-
-
-/*Extra large devices (large desktops, 1200px and up)*/
-
-@media(min-width: 1200px) {}
