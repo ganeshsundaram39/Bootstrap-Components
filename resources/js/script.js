@@ -160,7 +160,7 @@ const modalOutsideClick = e => {
     }
 };
 
-$('.modal-container .button ').on('click', modalToggle);
+$('.modal-container .button a').on('click', modalToggle);
 
 // modal background
 $(window).on('click', modalOutsideClick);
